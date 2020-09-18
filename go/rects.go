@@ -18,42 +18,47 @@
 *    return true as the first and third rectangle overlap each other.
 */
 
+package main
+
 import "fmt"
 
-type rects struct {
-    top_left [2]int
-    dimensions [2]int
-}
 
-var (
-    r1 = rect {
-        top_left: {1, 4},
-        dimensions: {3, 3}
-    }
 
-    r2 = rect {
-        top_left: {-1, 3},
-        dimensions: {2, 1}
-    }
+    
+    
 
-    r3 = rect {
-        top_left: {0, 5},
-        dimensions: {4, 3}
-    }
-)
+//     r2 = rect {
+//         top_left: {-1, 3},
+//         dimensions: {2, 1}
+//     }
+
+//     r3 = rect {
+//         top_left: {0, 5},
+//         dimensions: {4, 3}
+//     }
+// )
 
 func main() {
-    m = make(map[string] [2]int)
-
-
-}
-
-func creat_rect(top_left [2]int, dimensions [2]int) {
-    var r = rect {
-        top_left: top_left,
-        dimensions: dimensions
+    // r1 := rects { top_left: [1, 4], dimensions: [3, 3] }
+    // m = make(map[[]int] []int)
+    t := []struct {
+        top_left []int
+        dimensions []int
+    }{
+        {int{1, 4}, int{2, 1}},
+        {int{-1, 3}, int{2, 1}},
     }
 
-    return r
+    fmt.Println(t)
+
 }
+
+// func creat_rect(top_left [2]int, dimensions [2]int) {
+//     var r = rect {
+//         top_left: top_left,
+//         dimensions: dimensions
+//     }
+
+//     return r
+// }
 
