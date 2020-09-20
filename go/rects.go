@@ -44,12 +44,14 @@ func main() {
 	}
 
 	fmt.Println(t)
-	fmt.Println(dist[t[0]])
+	fmt.Println(dist(t[0]))
 
 }
 
 func dist(d rect) float64 {
-	return math.Abs(d.topleft[1] - d.topleft[0])
+	var x1, x2 float64 = float64(d.topleft[0]), float64(d.topleft[1])
+	fmt.Printf("%f %f", x1, x2)
+	return math.Abs(x1 - x2)
 }
 
 // func creat_rect(top_left [2]int, dimensions [2]int) {
