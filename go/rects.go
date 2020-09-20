@@ -20,32 +20,36 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-//     r2 = rect {
-//         top_left: {-1, 3},
-//         dimensions: {2, 1}
-//     }
-
-//     r3 = rect {
-//         top_left: {0, 5},
-//         dimensions: {4, 3}
-//     }
-// )
+type rect struct {
+	topleft    [2]int
+	dimensions [2]int
+}
 
 func main() {
-	// r1 := rects { top_left: [1, 4], dimensions: [3, 3] }
-	// m = make(map[[]int] []int)
-	t := []struct {
-		topleft    [2]int
-		dimensions [2]int
-	}{
+	// m = make(map[[2]int][]int)
+
+	// t := []struct {
+	// 	topleft    [2]int
+	// 	dimensions [2]int
+	// }{
+	t := []rect{
 		{[2]int{1, 4}, [2]int{2, 1}},
 		{[2]int{-1, 3}, [2]int{2, 1}},
+		{[2]int{0, 5}, [2]int{4, 3}},
 	}
 
 	fmt.Println(t)
+	fmt.Println(dist[t[0]])
 
+}
+
+func dist(d rect) float64 {
+	return math.Abs(d.topleft[1] - d.topleft[0])
 }
 
 // func creat_rect(top_left [2]int, dimensions [2]int) {
