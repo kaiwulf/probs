@@ -5,15 +5,20 @@ import (
 )
 
 func insertionSort(arr []int) []int {
-	for j := 1; j < len(arr); j++ {
+	for j := 2; j < len(arr); j++ {
 		key := arr[j]
 		i := j - 1
 		fmt.Println(arr[i], key)
-		for ; i > 0 && arr[i] > key; i-- {
-			// swap := arr[i+1]
-			arr[i+1] = arr[i]
-			// arr[i] = swap
-		}
+        for {
+            arr[i+1] = arr[i]
+            if !(i > 0 && arr[i] > key) {
+                break;
+            }
+            i--
+        }
+		// for ; i > 0 && arr[i] > key; i-- {
+		// 	arr[i+1] = arr[i]
+		// }
 		arr[i+1] = key
 	}
 	fmt.Println(arr)
