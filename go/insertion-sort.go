@@ -12,19 +12,22 @@ func insertionSort(arr []int) []int {
 		if j > 0 {
 			i = j - 1
 		}
-		fmt.Println(i, key)
-		var step rune
+		// fmt.Println(i, key)
+		// var step rune
 		// fmt.Println(arr[i], key)
-		for ; i > 0 && arr[i] > key; i-- {
-			fmt.Printf("before assignment:\narr[%d] = %d\n", i+1, arr[i])
-			fmt.Scanf("%r", step)
+		for k := 1; i > 0 && arr[i] > key; i-- {
+			fmt.Println("i", i)
+			fmt.Println("k", k)
+			// fmt.Printf("before assignment:\narr[%d] = %d\n", i+1, arr[i])
+			// fmt.Scanf("%r", step)
 			arr[i+1] = arr[i]
-			fmt.Printf("after assignment:\narr[%d] = %d\n", arr[i+1], arr[i])
-			fmt.Scanf("%r", step)
+			k++
+			// fmt.Printf("after assignment:\narr[%d] = %d\n", arr[i+1], arr[i])
+			// fmt.Scanf("%r", step)
 		}
 		arr[i+1] = key
 	}
-	fmt.Println(arr)
+	// fmt.Println(arr)
 	return arr
 }
 
